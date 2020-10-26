@@ -21,6 +21,7 @@ class Index(View):
         data = {}
         data['products'] = products
         data['categories'] = categories
+        data['active'] = id
         return render(request, 'store/index.html', data)
     def post(self, request, id=0):
         product = request.POST.get('product')

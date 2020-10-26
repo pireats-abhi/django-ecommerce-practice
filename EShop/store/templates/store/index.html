@@ -18,9 +18,9 @@
             <!-- filter -->
             <div class="col-lg-3 mx-auto">
                 <div class="list-group">
-                    <a href="{% url 'store:index' %}" class="list-group-item list-group-item-action">All Products</a>
+                    <a href="{% url 'store:index' %}" class="list-group-item list-group-item-action {% if active == 0 %}bg-info text-white{% endif %}">All Products</a>
                     {% for category in categories %}
-                    <a href="{% url 'store:category_index' category.id %}" class="list-group-item list-group-item-action">{{ category.name }}</a>
+                    <a href="{% url 'store:category_index' category.id %}" class="list-group-item list-group-item-action {% if active == category.id %}bg-info text-white{% endif %}">{{ category.name }}</a>
                     {% endfor %}
                 </div>
             </div>
